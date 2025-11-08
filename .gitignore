@@ -1,0 +1,11 @@
+/target/
+**/*.rs.bk
+
+Cargo.lock
+database.sqlite
+database/migration/target
+
+.env
+.vscode/
+.idea/
+*.iml

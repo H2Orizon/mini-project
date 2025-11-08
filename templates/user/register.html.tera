@@ -1,0 +1,38 @@
+{% extends "base" %}
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow rounded-4">
+                <div class="card-body p-4">
+                    <h3 class="card-title text-center mb-4">Реєстрація користувача</h3>
+                    <form action="/register" method="post">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Пароль</label>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password2" class="form-label">Повторіть Пароль</label>
+                            <input type="password" class="form-control" id="password2" name="password2" required>
+                        </div>
+                        <div class="g-recaptcha mb-3" data-sitekey="6LdqaQAsAAAAAPxJYDvih5zuvgKKhprym9cFmpqW"></div>
+                            <script src="https://www.google.com/recaptcha/api.js"></script>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-success">Зареєструватися</button>
+                        </div>
+                    </form>
+                    <div class="text-center mt-3">
+                        <small>Вже маєте акаунт? <a href="/log_in">Увійти</a></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

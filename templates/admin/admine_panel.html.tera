@@ -1,0 +1,28 @@
+{% extends "base" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    {% if user_dto is defined and user_dto.is_active %}
+        <a href="/admine_panel/all_user" class="btn btn-warning w-100 mb-2">All users</a>
+        <a href="/admine_panel/login_attempts" class="btn btn-warning w-100 mb-2">Login logs</a>
+
+        <form action="/toggle_2fa" method="post" class="mt-2">
+            {% if user_dto.twofa_enabled %}
+                <button type="submit" class="btn btn-danger w-100">Вимкнути 2FA</button>
+            {% else %}
+                <button type="submit" class="btn btn-success w-100">Увімкнути 2FA</button>
+            {% endif %}
+        </form>
+    {% else %}
+        <a href="/email_verify" class="btn btn-warning w-100">Activate your email</a>
+    {% endif %}
+
+    <div class="card-body text-center p-4">
+        <form action="/log_out" method="post">
+            <button type="submit" class="btn btn-danger w-100">Вийти</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

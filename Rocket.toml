@@ -1,0 +1,21 @@
+[default]
+port = 8888
+secret_key = "b9a8f3d1c5e2a7b3f6c9d4a2e1b8c1ad6a9e4c3b2f5d7a1c8b6e3f9d2a4b7c8e3"
+
+smtp_host = "sandbox.smtp.mailtrap.io"
+smtp_port = 0
+smtp_username = ""
+smtp_password = ""
+from_email = "rust_test_app@myapp.test"
+
+[global.oauth.github]
+provider = "GitHub"
+client_id = ""
+client_secret = ""
+redirect = "http://127.0.0.1:8888/auth/github/callback"
+
+[debug]
+databases.sqlite.path = "database/database.sqlite"
+
+[default.databases]
+sqlite_db = { url = "sqlite://my_database.db"}

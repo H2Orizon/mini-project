@@ -1,0 +1,11 @@
+Дані для:
+smtp_port
+smtp_username
+smtp_password
+Знаходяться в https://mailtrap.io/inboxes/.../messages
+
+client_id
+client_secret
+Знаходяться в https://github.com/settings/developers
+
+Для створення бд треба у папці database створити database.sqlite і вконсолі прописати sea-orm-cli migrate up
